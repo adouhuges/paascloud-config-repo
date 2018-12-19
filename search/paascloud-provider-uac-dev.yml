@@ -40,7 +40,6 @@ security:
     resource:
       id: paascloud-resource-uac
       filter-order: 3
-
 paascloud:
   enableSqlLogInterceptor: false
   aliyun:
