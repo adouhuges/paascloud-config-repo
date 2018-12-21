@@ -73,7 +73,7 @@ spring:
 
 feign:
   hystrix:
-    enabled: true
+    enabled: true #false 关闭hystrix功能
   client:
     config:
       default:
@@ -94,10 +94,10 @@ hystrix:
     default:
       execution:
         timeout:
-          enabled: true
+          enabled: true #false 关闭熔断功能
         isolation:
           thread:
-            timeoutInMilliseconds: 20000
+            timeoutInMilliseconds: 20000 #设置熔断超时时间
 
 info:
   软件著作权: paascloud快速搭建企业级分布式微服务平台
