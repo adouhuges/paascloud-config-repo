@@ -28,6 +28,19 @@ zuul:
         OkToRetryOnAllOperations: false #对所有操作请求都进行重试
         ConnectTimeout: 10000 #设置连接超时时间
         ReadTimeout: 10000 #设置读取超时时间
+    adou-route: #路由配置规则
+      path: /adou/**  #将这个下的请求,路由到 service-id=passcloud-provider-uac 服务上去进行处理
+      sensitiveHeaders:
+#      strip-prefix: false
+      service-id: paascloud-adou #服务提供者ID
+      ribbon: #对所有的服务配置,如果单独对于一种服务,前面表明服务名称  如hello-service.ribbon.ConnectTimeout=600
+        eager-load:
+          enabled: true
+        MaxAutoRetries: 1 #对当前实例的重试次数
+        MaxAutoRetriesNextServer: 2 #切换实例的重试次数
+        OkToRetryOnAllOperations: false #对所有操作请求都进行重试
+        ConnectTimeout: 10000 #设置连接超时时间
+        ReadTimeout: 10000 #设置读取超时时间
     mdc-route:
       path: /mdc/**
       sensitiveHeaders:
