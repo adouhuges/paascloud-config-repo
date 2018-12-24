@@ -19,9 +19,13 @@ spring:
     password: adouhu
   redis:
     host: 47.101.155.20
-    password: redispass
     port: 6379
-    timeout: 0
+    password: redispass
+    pool:
+      max-active: 16
+      max-idle: 16
+      max-wait: -1
+      min-idle: 10
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     filters: stat,wall
