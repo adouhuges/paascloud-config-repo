@@ -64,10 +64,6 @@ spring:
           starttls:
             enable: true
             required: true
-  boot:
-    admin:
-      username: admin
-      password: admin
   zipkin:
     rabbitmq:
       queue: zipkin
@@ -113,7 +109,7 @@ paascloud:
   auth:
     jwt:
       expiredRemainMinutes: 20
-      expiredMinutes: 120
+      expiredMinutes: 12000
   aliyun:
     key:
       accessKeyId: 'your aliyun accessKeyId'
