@@ -11,8 +11,8 @@ spring:
 
 zuul:
   host:
-    socket-timeout-millis: 60000
-    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000000
+    connect-timeout-millis: 60000000
   forceOriginalQueryStringEncoding: true
   routes:
     uac-route: #路由配置规则
@@ -26,8 +26,8 @@ zuul:
         MaxAutoRetries: 1 #对当前实例的重试次数
         MaxAutoRetriesNextServer: 2 #切换实例的重试次数
         OkToRetryOnAllOperations: false #对所有操作请求都进行重试
-        ConnectTimeout: 100000000 #设置连接超时时间
-        ReadTimeout: 100000000 #设置读取超时时间
+        ConnectTimeout: 10000000 #设置连接超时时间
+        ReadTimeout: 10000000 #设置读取超时时间
     adou-route: #路由配置规则
       path: /adou/**  #将这个下的请求,路由到 service-id=passcloud-provider-uac 服务上去进行处理
       sensitiveHeaders:
@@ -51,8 +51,8 @@ zuul:
         MaxAutoRetries: 1
         MaxAutoRetriesNextServer: 2
         OkToRetryOnAllOperations: false
-        ConnectTimeout: 100000000
-        ReadTimeout: 100000000
+        ConnectTimeout: 10000000
+        ReadTimeout: 10000000
     omc-route:
       path: /omc/**
       sensitiveHeaders:
