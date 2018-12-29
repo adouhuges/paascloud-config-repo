@@ -19,7 +19,7 @@ zuul:
       path: /uac/**  #将这个下的请求,路由到 service-id=passcloud-provider-uac 服务上去进行处理
       sensitiveHeaders:
 #      strip-prefix: false
-      service-id: paascloud-provider-uac #服务提供者ID
+      service-id: paascloud-provider-uac #服务提供者ID,可以进行负载均衡, 如果是url的话,则没法负载均衡
       ribbon: #对所有的服务配置,如果单独对于一种服务,前面表明服务名称  如hello-service.ribbon.ConnectTimeout=600
         eager-load:
           enabled: true
@@ -103,6 +103,19 @@ zuul:
         ReadTimeout: 10000
   add-proxy-headers: true
   add-host-header: true
+  
+security:
+  oauth2:
+    client:
+      clientId: paascloud-client-gateway
+      clientSecret: paascloudClientSecret
+      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+    resource:
+      user-info-uri: http://paascloud-gateway:7979/uac/user
+      prefer-token-info: false
+      jwt:
+        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
 
 paascloud:
   enableSqlLogInterceptor: false

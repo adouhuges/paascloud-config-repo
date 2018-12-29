@@ -40,12 +40,12 @@ security:
       access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
       user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
     resource:
-      user-info-uri: http://paascloud-gateway:7979/uac/user
+      user-info-uri: http://paascloud-gateway:7979/uac/user #获取当前token的用户信息
       prefer-token-info: false
       jwt:
-        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+        key-uri: http://paascloud-provider-uac:8000/oauth/token_key #获取公开的key 非对称加密
 
-paascloud:
+paascloud: #自定义配置data
   enableSqlLogInterceptor: false
   dingTalk:
     webhookToken:
