@@ -78,7 +78,7 @@ feign:
     config:
       default:
         connectTimeout: 5000
-        readTimeout: 5000
+        readTimeout: 500000
 
 ribbon:
   eager-load:
@@ -87,7 +87,7 @@ ribbon:
   MaxAutoRetriesNextServer: 2
   OkToRetryOnAllOperations: false
   ConnectTimeout: 60000
-  ReadTimeout: 20000
+  ReadTimeout: 2000000
 
 hystrix:
   command:
