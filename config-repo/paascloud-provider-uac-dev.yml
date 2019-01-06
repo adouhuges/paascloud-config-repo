@@ -63,11 +63,11 @@ paascloud:
   oauth2:
     jwtSigningKey: paascloud
     client:
-      id: null
-      accessTokenUrl: null
-      clientId: null
-      clientSecret: null
-      clientAuthenticationScheme: null
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${security.oauth2.client.access-token-uri}
+      clientId: ${security.oauth2.client.clientId}
+      clientSecret: ${security.oauth2.client.clientSecret}
+      clientAuthenticationScheme: header
   security:
     social:
       filterProcessesUrl: /auth/callback
