@@ -4,7 +4,7 @@ spring:
     schema: classpath:/mysql.sql
   sleuth:
     enabled: false
-  zipkin:
+  zipkin: #通过服务发现来定位需要收集的网关地址
     locator:
       discovery:
         enabled: true

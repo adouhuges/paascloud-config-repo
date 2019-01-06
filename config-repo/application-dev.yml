@@ -31,17 +31,23 @@ spring:
     filters: stat,wall
     druid:
       initial-size: 50
-      min-idle: 50
+      max-wait-millis: 10000
+      max-idle: 50
+      min-idle: 10
       max-active: 100
       test-on-borrow: true
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      time-between-eviction-runs-millis: 30000  #30秒运行一次空闲链接回收器
+      min-evictable-idle-time-millis: 60000 #空闲30分钟的链接被回收
+      num-tests-per-eviction-run: 100 #每次检查的链接数
       web-stat-filter:
         exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
       stat-view-servlet:
         allow:
         login-username: admin
         login-password: admin
+     type: com.alibaba.druid.pool.DruidDataSource
+        
   mail:
     host: smtp.163.com
     username: paascloudTest@163.com

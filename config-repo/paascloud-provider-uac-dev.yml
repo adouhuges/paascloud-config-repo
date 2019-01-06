@@ -114,7 +114,7 @@ paascloud:
       clients[4]:
         clientId: paascloud-client-mdc
         clientSecret: paascloudClientSecret
-        accessTokenValidateSeconds: 7200
+        accessTokenValidateSeconds: 720000
         scope: "*"
       clients[5]:
         clientId: paascloud-client-omc
