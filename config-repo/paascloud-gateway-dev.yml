@@ -10,6 +10,10 @@ spring:
       max-file-size: 50MB
 
 zuul:
+  security:
+    permit:
+      permitMethod: OPTIONS
+      permitUri: /auth,/user
   host:
     socket-timeout-millis: 60000000
     connect-timeout-millis: 60000000
