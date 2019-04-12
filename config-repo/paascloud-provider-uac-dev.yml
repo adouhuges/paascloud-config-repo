@@ -53,3 +53,15 @@ paascloud:
         mobileMaxSendCount: 1
         ipMaxSendCount: 2
         totalMaxSendCount: 3
+  uac: 
+    jwt: 
+      tokenExpirationTime: 43200
+      refreshTokenExpTime: 44640
+      tokenIssuer: http://www.ku-link.com
+      tokenSigningKey: QjYzNTRCMjQ5NEUxRkI1OEMwNDczMDNEQjkzRDlFRTA0QkFDODc1NDM2MzQ4NkIyRTcyNTNENzlEMUU3RkI1MA==
+      tokenHeaderParam: Authorization
+    
+    
+    
+    
+    
